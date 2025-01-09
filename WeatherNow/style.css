@@ -1,0 +1,216 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+body{
+    font-family: "Roboto Condensed", serif;    
+    font-weight: 400;
+    font-style: normal;
+    background-image: url('images/bg.jpg'); /* Path to the image */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /* Fixes the background image */
+}
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1{
+    font-size: 2rem;
+    color: whitesmoke;
+    padding: 5px;
+    margin-top: 5px;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: whitesmoke;
+    height: 100%;
+    width: 50%;
+}
+
+.left h2{
+    margin-top: 160px;
+    font-size: 37px;
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 100%;
+    width: 50%; 
+}
+
+.search-box{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 30px;
+}
+.search-box:hover{
+    background-color: whitesmoke;
+}
+.search {
+    width: 340px;
+    padding: 10px;
+    background-color: rgb(60 11 60 / 77%);
+    font-size: 16px;
+    border: 2px ;
+    border-radius: 30px; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    outline: none; 
+    color: #888;
+}
+
+.search:focus {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    background-color: #f0f0f0; 
+}
+
+.search:hover {
+    padding-right: 80px;
+    background-color: #eaedea; 
+    color: #080808;
+}
+
+.search::placeholder {
+    color: #888; 
+    transition: color 0.3s ease;
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px; /* Position the button inside the input field on the right */
+    top: 50%; /* Vertically center the button */
+    transform: translateY(-50%); /* Center the button vertically */
+    padding: 5px 8px;
+    background-color:transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+.search-btn img{
+    width: 20px;
+    height: 20px;
+}
+
+.search-btn:hover{
+    background-color: whitesmoke;
+}
+
+.weather-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 70%;
+    margin-bottom: 60px;
+    border-radius: 30px;
+    background-color: transparent; /* Used to give transparent effect */
+    backdrop-filter: blur(10px); /* Blur effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(124, 121, 121, 0.3); /* Border for glass effect */
+}
+
+.weather-icon{
+    width : 160px;
+    margin-top: -25px;
+}
+
+.weather-box h1{
+    font-size: 33px;
+    margin-top: 10px;
+    color: whitesmoke;
+}
+
+.weather-box h2{
+    font-size: 24px;
+    color: whitesmoke;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:30px;
+    margin-top: 20px;
+}
+
+.column{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.column p{
+    font-size: 17px;
+    color: whitesmoke;
+}
+.column img{
+    width: 50px;
+    margin-right: 10px;
+}
+
+.humidity, .wind{
+    font-size: 25px;
+    margin-top: -3px;
+}
+
+/* Default for larger screens */
+.body {
+    flex-direction: row;
+}
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .body {
+        flex-direction: column; /* Stacks the content vertically */
+    }
+
+    .left, .right {
+        width: 100%; /* Make sections take full width */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem; /* Reduce header size */
+    }
+
+    .weather-box {
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .search {
+        width: 80%; /* Reduce input box width */
+    }
+}
+
